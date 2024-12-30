@@ -9,7 +9,7 @@ app.use(express.json());
 
 app.post('/', (req, res) => {
   console.log('Received Apple In-App Purchase Webhook:');
-  console.log(req.body); // 웹훅 데이터를 콘솔에 출력
+  console.log(JSON.stringify(req.body, null, 2)); // 웹훅 데이터를 콘솔에 출력
 
   // 예: 데이터 검증 또는 처리 로직 추가
   if (req.body && req.body.notification_type) {
